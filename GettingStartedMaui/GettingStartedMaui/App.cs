@@ -1,10 +1,7 @@
 ﻿using Microsoft.Maui;
 using Microsoft.Maui.Controls;
-using System;
+using Microsoft.Maui.Graphics;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GettingStartedMaui
 {
@@ -12,6 +9,11 @@ namespace GettingStartedMaui
     {
 		List<IWindow> _windows = new List<IWindow>();
 		public IReadOnlyList<IWindow> Windows => _windows.AsReadOnly();
+
+		public App(IImageSourceServiceConfiguration imageConfig)
+        {
+            imageConfig.SetImageDirectory("Assets");
+        }
 
 		public IWindow CreateWindow(IActivationState activationState)
 		{

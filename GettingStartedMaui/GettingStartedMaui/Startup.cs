@@ -14,6 +14,8 @@ namespace GettingStartedMaui
 				{
 					fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
 				});
+
+			appBuilder.UseMicrosoftExtensionsServiceProviderFactory();
 		}
 	}
 }

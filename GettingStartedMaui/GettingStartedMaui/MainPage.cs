@@ -1,17 +1,17 @@
 ﻿using Microsoft.Maui;
 using Microsoft.Maui.Controls;
-using System;
-using System.Collections.Generic;
+using Microsoft.Maui.Graphics;
+using Microsoft.Maui.Graphics.Text;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GettingStartedMaui
 {
-	public partial class MainPage : ContentPage
+    public partial class MainPage : ContentPage
 	{
 		public MainPage()
 		{
+			BackgroundColor = Color.FromArgb("#512bdf");
+
 			var verticalStack = new VerticalStackLayout() { Spacing = 20 };
 			verticalStack.Add(new Label { Text = "Hello, World!", FontSize = 32, HorizontalOptions = LayoutOptions.CenterAndExpand });
 			SemanticProperties.SetHeadingLevel((BindableObject)verticalStack.Children.Last(), SemanticHeadingLevel.Level1);
@@ -30,6 +30,7 @@ namespace GettingStartedMaui
 
 			verticalStack.Add(counterLabel);
 			verticalStack.Add(button);
+			verticalStack.Add(new Image { Source = "dotnet_bot.png", WidthRequest = 300, HorizontalOptions = LayoutOptions.Center });
 
 			Content = verticalStack;
 		}
